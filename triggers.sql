@@ -59,7 +59,6 @@ BEGIN
     INTO v_SongDuration
     FROM Songs
     WHERE SongID = NEW.SongID;
-
     IF NEW.DurationPlayed IS NOT NULL
        AND NEW.DurationPlayed > v_SongDuration THEN
         SIGNAL SQLSTATE '45000'
